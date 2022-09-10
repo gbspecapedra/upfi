@@ -1,4 +1,4 @@
-import { Box, Heading, Flex, Progress } from '@chakra-ui/react';
+import { Box, Flex, Heading, Progress } from '@chakra-ui/react';
 
 export function Loading(): JSX.Element {
   return (
@@ -9,7 +9,7 @@ export function Loading(): JSX.Element {
       flexDir="column"
     >
       <Box>
-        <Heading>Carregando aplicação...</Heading>
+        <Heading>Loading... You&apos;ll be redirected in a few seconds</Heading>
         <Progress
           mt={4}
           size="xs"

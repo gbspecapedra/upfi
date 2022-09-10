@@ -1,12 +1,12 @@
-import { screen, render, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { ChakraProvider } from '@chakra-ui/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import AxiosMock from 'axios-mock-adapter';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Home from '../../pages/index';
-import { theme } from '../../styles/theme';
 import { api } from '../../services/api';
+import { theme } from '../../styles/theme';
 
 const apiMock = new AxiosMock(api);
 
@@ -75,7 +75,9 @@ describe('Home page', () => {
     render(<Home />, { wrapper });
 
     expect(
-      screen.getByRole('heading', { name: 'Carregando aplicação...' })
+      screen.getByRole('heading', {
+        name: `Loading... You'll be redirected in a few seconds`,
+      })
     ).toBeInTheDocument();
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
@@ -92,10 +94,10 @@ describe('Home page', () => {
     render(<Home />, { wrapper });
 
     expect(
-      await screen.findByText('Infelizmente ocorreu um erro =(')
+      await screen.findByText('Oops! Occurred an unexpected error =(')
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: 'Clique aqui para tentar novamente' })
+      screen.getByRole('button', { name: 'Click here to try again!' })
     ).toBeInTheDocument();
   });
 
@@ -154,8 +156,8 @@ describe('Home page', () => {
 
     fireEvent.click(dogeImg);
 
-    expect(await screen.findByText('Abrir original')).toBeInTheDocument();
-    expect(screen.getByText('Abrir original')).toHaveAttribute(
+    expect(await screen.findByText('Open original')).toBeInTheDocument();
+    expect(screen.getByText('Open original')).toHaveAttribute(
       'href',
       'LOAD_SUCCESS_SRC'
     );
@@ -205,7 +207,7 @@ describe('Home page', () => {
     expect(screen.getByRole('img', { name: 'Danilo' })).toBeInTheDocument();
 
     const loadMoreButton = await screen.findByRole('button', {
-      name: 'Carregar mais',
+      name: 'See more',
     });
     fireEvent.click(loadMoreButton);
 
@@ -275,7 +277,7 @@ describe('Home page', () => {
     expect(screen.getByRole('img', { name: 'Danilo' })).toBeInTheDocument();
 
     const loadMoreButton = await screen.findByRole('button', {
-      name: 'Carregar mais',
+      name: 'See more',
     });
     fireEvent.click(loadMoreButton);
 
@@ -293,7 +295,7 @@ describe('Home page', () => {
 
     expect(loadMoreButton).not.toBeInTheDocument();
 
-    const addNewImageButton = screen.getByText('Adicionar imagem');
+    const addNewImageButton = screen.getByText('Add an image');
     fireEvent.click(addNewImageButton);
 
     const fileInput = screen.getByTestId('image') as HTMLInputElement;
@@ -321,7 +323,7 @@ describe('Home page', () => {
     expect(nameInput).toHaveValue('Rocket League');
     expect(descriptionInput).toHaveValue('Flying forever');
 
-    const submitButton = screen.getByRole('button', { name: 'Enviar' });
+    const submitButton = screen.getByRole('button', { name: 'Upload' });
 
     apiMock.onPost('/api/images').replyOnce(200);
     apiMock.onGet('/api/images').replyOnce(200, {

@@ -1,4 +1,4 @@
-import { Box, Flex, Button, useDisclosure, Image } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, useDisclosure } from '@chakra-ui/react';
 
 import { ModalAddImage } from './Modal/AddImage';
 
@@ -17,7 +17,7 @@ export function Header(): JSX.Element {
           py={6}
         >
           <Image src="logo.svg" h={10} />
-          <Button onClick={() => onOpen()}>Adicionar imagem</Button>
+          <Button onClick={() => onOpen()}>Add an image</Button>
         </Flex>
       </Box>
 

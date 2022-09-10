@@ -1,29 +1,29 @@
 import {
   Box,
-  FormLabel,
   CircularProgress,
   CircularProgressLabel,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
   Icon,
   Image,
   Text,
-  FormControl,
-  FormErrorMessage,
-  Flex,
-  useToast,
   Tooltip,
+  useToast,
 } from '@chakra-ui/react';
 import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
 import {
-  useState,
-  SetStateAction,
   Dispatch,
-  ForwardRefRenderFunction,
   forwardRef,
+  ForwardRefRenderFunction,
+  SetStateAction,
   useCallback,
   useEffect,
+  useState,
 } from 'react';
 import {
-  FieldError,
+  FieldErrorsImpl,
   FieldValues,
   UseFormSetError,
   UseFormTrigger,
@@ -33,7 +33,7 @@ import { api } from '../../services/api';
 
 export interface FileInputProps {
   name: string;
-  error?: FieldError;
+  error?: FieldErrorsImpl;
   setImageUrl: Dispatch<SetStateAction<string>>;
   localImageUrl: string;
   setLocalImageUrl: Dispatch<SetStateAction<string>>;
@@ -112,8 +112,8 @@ const FileInputBase: ForwardRefRenderFunction<
         if (err?.message === 'Cancelled image upload.') return;
 
         toast({
-          title: 'Falha no envio',
-          description: 'Ocorreu um erro ao realizar o upload da sua imagem.',
+          title: 'Failed to upload an image',
+          description: 'Occur an error when trying to upload your image!',
           status: 'error',
           duration: 5000,
           isClosable: true,
@@ -175,7 +175,7 @@ const FileInputBase: ForwardRefRenderFunction<
                   <CircularProgressLabel>{progress}%</CircularProgressLabel>
                 </CircularProgress>
                 <Text as="span" pt={2} textAlign="center">
-                  Enviando...
+                  Sending...
                 </Text>
               </>
             ) : (
@@ -202,7 +202,7 @@ const FileInputBase: ForwardRefRenderFunction<
                 >
                   <Icon as={FiPlus} w={14} h={14} />
                   <Text as="span" pt={2} textAlign="center">
-                    Adicione sua imagem
+                    Add an image
                   </Text>
                 </Flex>
               </Box>
