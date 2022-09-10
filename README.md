@@ -11,6 +11,7 @@
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-use">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
 </p>
 
@@ -36,10 +37,6 @@
 
 The main objective is to add some code snippets so that the image upload application works correctly. It must make requests to its own Next.js API that will return data from FaunaDB (database) and ImgBB (image hosting service). The implemented interface must follow Figma's layout. 
 
-- Infinite Queries and Mutations with React Query;
-- Form submission with React Hook Form;
-- Modal and Toast display with Chakra UI;
-
 ## 🚀 Technologies
 
 This project was developed with the following technologies:
@@ -54,6 +51,8 @@ This project was developed with the following technologies:
 - [faunaDB](https://docs.fauna.com/fauna/current/)
 
 ## 🔖 Layout
+
+Created from Rocketseat [template](https://github.com/rocketseat-education/ignite-template-reactjs-upload-de-imagens).
 
 You can view the layout of the project in the [web](https://www.figma.com/file/jCRIRwJM4KLfjoAOzLE9Op/Desafio-2-M%C3%B3dulo-4-ReactJS-(Copy)?node-id=0%3A1) version. You need to have a [Figma](https://www.figma.com/) account to access it.
 
@@ -77,6 +76,12 @@ $ yarn dev
 # Navigate to http://localhost:3000
 # The app will automatically reload if you change any of the source files.
 ```
+
+## ✨ Features
+
+- Infinite Queries and Mutations with React Query;
+- Form submission with React Hook Form;
+- Modal and Toast display with Chakra UI;
 
 ## 📄 License
 
