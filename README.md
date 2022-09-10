@@ -1,5 +1,5 @@
 <h1 align="center">
-  Image Upload
+  upfi
 </h1>
 
 <p align="center">
@@ -16,19 +16,19 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gisabernardess/image-upload">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gisabernardess/upfi">
 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gisabernardess/image-upload">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gisabernardess/upfi">
 
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gisabernardess/image-upload">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gisabernardess/upfi">
 
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gisabernardess/image-upload">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gisabernardess/upfi">
 
-  <img alt="Github license" src="https://img.shields.io/github/license/gisabernardess/image-upload">
+  <img alt="Github license" src="https://img.shields.io/github/license/gisabernardess/upfi">
 </p>
 
 <p align="center">
-  <img alt="image-upload" src="https://user-images.githubusercontent.com/17882257/189501284-5ee0ee89-e7d7-4ea2-969d-0d9608c2323c.png">
+  <img alt="upfi" src="https://user-images.githubusercontent.com/17882257/189501284-5ee0ee89-e7d7-4ea2-969d-0d9608c2323c.png">
 </p>
 
 <br/>
@@ -62,10 +62,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [Y
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/gisabernardess/image-upload.git
+$ git clone https://github.com/gisabernardess/upfi.git
 
 # Go into the directory
-$ cd image-upload
+$ cd upfi
 
 # Install dependencies
 $ yarn
